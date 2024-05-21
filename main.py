@@ -91,7 +91,5 @@ if __name__ == 'main':
 
     for i, k in enumerate(Z_k, start=1):
         print(f'\nState {k}:')
-        X_k, P_k = filter(X_prev, P_prev)
-        X_k = X_prev
-        P_k = P_prev
+        X_k, P_k = filter(X_k, P_k)
         
