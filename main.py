@@ -36,6 +36,13 @@ B_k = np.array([
     [0.0, 0.0, 0.0, 1.0]
 ])
 
+U_k = np.array([
+    [1.0, 0.0, 0.0, 0.0],
+    [0.0, 1.0, 0.0, 0.0],
+    [0.0, 0.0, 1.0, 0.0],
+    [0.0, 0.0, 0.0, 1.0]
+])
+
 Noise = np.array(
     [0.05, 0.05, 0.01, 0.01]
 )
@@ -43,9 +50,9 @@ Noise = np.array(
 def getZ():
     print('get')
 
-def predict(X_prev, P_prev, U):
+def predict(X_prev, P_prev):
 
-    X_k = (F_k @ X_prev) + (B_k @ U)
+    X_k = (F_k @ X_prev) + (B_k @ U_k)
     P_k = (F_k @ P_prev @ F_k.T) + (Q_k)
 
     return X_k, P_k 
